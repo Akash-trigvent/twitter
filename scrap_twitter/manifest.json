@@ -1,0 +1,23 @@
+{
+    "manifest_version":3,
+    "name":"scrap_twitter",
+    "version":"1.0.1",
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts":[
+        {
+        "matches":["https://*.twitter.com/*"],
+        "js":["content_script.js"]
+        }
+    ],
+    "action":{
+        "default_title":"twitter",
+        "default_icon":"den.jpg",
+        "default_popup":"popup.html"
+    },
+    "permissions": [
+        "tabs","storage"
+    ]
+
+}
