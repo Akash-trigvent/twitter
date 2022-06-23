@@ -2,6 +2,7 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
     
     if (message.action == "check") {
         console.log("hello")
+        getDetails()
         setTimeout(() => {
             console.log(details);
         }, 1000);
@@ -14,26 +15,6 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
         }, 2000);
     }
 })
-
-let fetch_details = document.createElement("button");
-fetch_details.textContent = "Get Data";
-fetch_details.setAttribute("id", "btn");
-fetch_details.addEventListener("click", getDetails);
-document.body.appendChild(fetch_details);
-
-document.getElementById("btn").style.cssText = `
-position: fixed;
-z-Index: 999;
-top: 19px;
-left: 140px;
-background: light-gray;
-border-radius: 20px;
-border:2px solid black;
-background: #3560ff;
-color: white;
-padding: 5px;
-box-shadow: 0px 0px 17px black;
-// `;
 
 let details = {};
 function getDetails() {

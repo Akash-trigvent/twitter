@@ -10,16 +10,12 @@ window.onload = function () {
     });
 }
 
-
-
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse){
-    
     if(message.type == "sendDetails"){
-        // console.log(message.details)
+        
         let name = message.details['Name'];
         let userName = message.details['userName'];
         let joinDate = message.details['joinDate'];
-        
         sendResponse({'status': 'ok'});
 
         document.getElementById("nam").value = name
@@ -34,4 +30,27 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse){
             data.classList.remove("display")
         });
     }
+    else if(message.type == "googlesheet" && message.from == 'bg'){
+        document.getElementById("msg").innerText = message.msg;
+    }
+
+
 })
+
+let btn = document.getElementById("btn");
+
+btn.addEventListener("click", function(){ 
+    let personObj = {};
+    let name = document.getElementById("nam").value 
+    let usrNam = document.getElementById("u_nam").value 
+    let joining = document.getElementById("j_date").value
+    let url = document.getElementById("url").value;
+
+    personObj.Name = name
+    personObj.userName = usrNam
+    personObj.joinDate = joining
+    personObj.url = url
+
+    chrome.runtime.sendMessage({ "from": "popup", "person_details": personObj})
+})
+
