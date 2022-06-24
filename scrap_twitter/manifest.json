@@ -24,6 +24,8 @@
         "scopes": [
             "https://www.googleapis.com/auth/spreadsheets"
         ]
+    },"content_security_policy": {        
+        "extension_pages": "script-src 'self'; object-src 'self'"
     },
     "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAh02BPT0Pu3PAB6FMAozmn9nA0RSkLj5oIaiBsu23CadXRRbw640Z8SoELSi4Rt5DZKa7HNehHWDKeTzIwqZC9vLzYWj3Ffb6NKiRGaGwCX6iFRtXrspvsLbx/r1yoS/MwSMpZwpa1nNpV1imV/FNxdi9TjKkDkwJCydYx3C+24lUEN4Blc3J3JKgTntDqPxUixwMjjzmEXuj77UJRvLlkXGf+I16hKQSZ5iUNYf6kAjmbCEkzHHNXsj1uMIa06YLNi8KLSTHYyC7EpjyIF+EfGQ/V78WX2bsqIO0Bxy/apKpi9Msp9RYgFsW/+PXo+aTxstwwrvw8rrjpJ4OH9p+MQIDAQAB"
 }
